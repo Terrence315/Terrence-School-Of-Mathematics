@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terrence School of Mathematics | Video Lessons</title>
+  <meta name="description" content="Tutoring resources and recorded YouTube lessons." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --muted: #aab2d5;
+      --text: #eef0ff;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 20% 0%, rgba(123, 97, 255, 0.25), transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(0, 209, 255, 0.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
+
+    header {
+      display: grid;
+      gap: 10px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(18,26,51,0.75);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .title { font-size: clamp(22px, 3vw, 34px); font-weight: 750; letter-spacing: 0.2px; margin: 0; }
+    .subtitle { margin: 0; color: var(--muted); max-width: 75ch; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .badge {
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .toolbar {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+    .search {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      outline: none;
+    }
+    .search::placeholder { color: rgba(170,178,213,0.7); }
+
+    main { margin-top: 18px; }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width: 760px) {
+      .toolbar { grid-template-columns: 1fr auto; align-items: center; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 1040px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(18,26,51,0.8);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      min-height: 320px;
+    }
+
+    .video {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: rgba(0,0,0,0.25);
+    }
+    .video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .content { padding: 14px 14px 16px; display: grid; gap: 10px; }
+    .h3 { margin: 0; font-size: 16px; font-weight: 700; }
+    .meta { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      text-decoration: none;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .btn:hover { background: rgba(255,255,255,0.10); }
+
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 2px;
+    }
+
+    .hide { display: none !important; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="title">Terrence School Of Mathematics</h1>
+      <p class="subtitle">
+        We turn confusion into confidence by helping students master mathematics step by step.
+      </p>
+      <div class="badges">
+        <div class="badge">Statistics</div>
+        <div class="badge">Math</div>
+        <div class="badge">Exam Prep</div>
+        <div class="badge">YouTube Lesson Library</div>
+      </div>
+
+      <div class="toolbar">
+        <input id="search" class="search" type="search" placeholder="Search videos by title or topic…" aria-label="Search videos" />
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" id="videoGrid">
+
+        <!-- VIDEO CARD (copy/paste this block to add more videos) -->
+        <article class="card" data-tags="intro statistics probability">
+          <div class="video">
+            <!-- Replace VIDEO_ID_1 with your YouTube video id (the part after v= in the URL) -->
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_1"
+              title="Intro to Statistics"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="content">
+            <h3 class="h3">Intro to Statistics (Basics)</h3>
+            <p class="meta">Topic: descriptive stats, distributions • Level: beginner</p>
+            <div class="actions">
+              <a class="btn" href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" rel="noopener">Watch on YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="regression linear model">
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_2"
+              title="Linear Regression Walkthrough"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="content">
+            <h3 class="h3">Linear Regression Walkthrough</h3>
+            <p class="meta">Topic: OLS, interpretation • Level: intermediate</p>
+            <div class="actions">
+              <a class="btn" href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" rel="noopener">Watch on YouTube</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="calculus derivatives limits">
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_3"
+              title="Calculus: Limits & Derivatives"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="content">
+            <h3 class="h3">Calculus: Limits & Derivatives</h3>
+            <p class="meta">Topic: limits, derivative rules • Level: beginner–intermediate</p>
+            <div class="actions">
+              <a class="btn" href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank" rel="noopener">Watch on YouTube</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <footer>
+        <div><strong>Contact:</strong> Add your email/WhatsApp here.</div>
+        <div style="margin-top:6px;">© <span id="year"></span> Terrence Tutoring. Hosted on GitHub Pages.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple search/filter by title + tags
+    const search = document.getElementById("search");
+    const cards = Array.from(document.querySelectorAll("#videoGrid .card"));
+
+    function normalize(s) {
+      return (s || "").toLowerCase().trim();
+    }
+
+    function applyFilter() {
+      const q = normalize(search.value);
+      cards.forEach(card => {
+        const title = normalize(card.querySelector(".h3")?.textContent);
+        const tags = normalize(card.getAttribute("data-tags"));
+        const meta = normalize(card.querySelector(".meta")?.textContent);
+
+        const matches = !q || title.includes(q) || tags.includes(q) || meta.includes(q);
+        card.classList.toggle("hide", !matches);
+      });
+    }
+
+    search.addEventListener("input", applyFilter);
+  </script>
+</body>
+</html>
